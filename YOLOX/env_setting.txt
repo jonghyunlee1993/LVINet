@@ -1,0 +1,2 @@
+export PYTHONPATH="${PYTHONPATH}:/home/ubuntu/Workspace/G_LVI/YOLOX/yolox" 
+export YOLOX_DATADIR=/home/ubuntu/Workspace/G_LVI/YOLOX/datasets
