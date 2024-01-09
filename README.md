@@ -40,15 +40,20 @@ The original paper is [A robust model training strategy using hard negative mini
 ## Run
 
 1. Move patch images of the external validation dataset (hard-labeled dataset) to the data folder.
-
 2. Do inference using ConViT. (Use notebook file)
-
 3. Do inference using YOLOX. (Use the following commands)
 
    ```
    cd YOLOX
    python ./tools/LVI_prediction.py image -n yolox_m_LVI -expn yolox_m_LVI --path ../data/ --save_result --conf 0.001 --ckpt weights/LVINet_yolox_m.pth --device gpu
    ```
+4. Do inference using an ensemble prediction notebook.
 
-5. Do inference using an ensemble prediction notebook.
+## Performance
+
+| Method          | Model   | AUROC                | AUPRC                | Accuracy             | F1 score                 |
+|-----------------|---------|----------------------|----------------------|----------------------|--------------------------|
+| Classification  | ConViT  | 0.9184 (0.8975-0.9393)| 0.869 (0.8338-0.9041) | 0.8674 (0.8465-0.8883)| 0.7896 (0.7543-0.8248)|
+| Detection       | YOLOX   | 0.8915 (0.8638-0.9192)| 0.8319 (0.7876-0.8763)| 0.8592 (0.8364-0.882) | 0.7934 (0.7577-0.8291)|
+| Ensemble        |         | 0.9438 (0.9258-0.9619)| 0.9132 (0.8875-0.939) | 0.8983 (0.879-0.9175) | 0.8358 (0.8035-0.8681)|
 
